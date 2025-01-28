@@ -1,16 +1,16 @@
 {
-  "name": "template-project",
+  "name": "@MynBites/plugin-manager",
   "version": "0.0.1",
-  "description": "Template Project",
+  "description": "Plugin Manager",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
-    "test": "mocha --recursive"
+    "test": "mocha test/index.test.js --timeout 60000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MynBites/nodejs-esm-template.git"
+    "url": "git+https://github.com/MynBites/plugin-manager.git"
   },
   "keywords": [
     "nodejs",
@@ -19,9 +19,12 @@
   "author": "MynBites",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/MynBites/nodejs-esm-template/issues"
+    "url": "https://github.com/MynBites/plugin-manager/issues"
   },
-  "homepage": "https://github.com/MynBites/nodejs-esm-template#readme",
+  "homepage": "https://github.com/MynBites/plugin-manager#readme",
+  "dependencies": {
+    "syntax-error": "^1.4.0"
+  },
   "devDependencies": {
     "mocha": "^11.1.0"
   }

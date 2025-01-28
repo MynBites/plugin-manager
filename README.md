@@ -1,5 +1,5 @@
-# NodeJS ESM Template
-Here, the template repository used for creating future projects
+# @MynBites/plugin-manager
+Plugin Manager for Bot
 
 ## Installation
 ```sh copy
