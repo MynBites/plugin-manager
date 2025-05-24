@@ -84,8 +84,9 @@ export class PluginManager extends EventEmitter {
 
     this.loadFolder(folder, recursiveRead)
 
-    const watching = watch(folder, (event, file) => {
-      this.addPlugin(file, folder, event)
+    const watching = watch(folder, async (event, file) => {
+      const data = await this.addPlugin(file, folder, event)
+      this.emit('load', { file, folder, event, data })
     })
     watching.on('close', () => this.deletePluginFolder(folder, true))
     this.watcher[folder] = watching
