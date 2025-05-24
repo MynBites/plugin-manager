@@ -63,7 +63,8 @@ export class PluginManager extends EventEmitter {
           }
 
           // if windows it will have file:// prefix because if not it will throw error
-          await importFile(resolved)
+          const data = await importFile(resolved)
+          this.emit('load', { file: path, folder, data })
         } catch (e) {
           this.logger?.error(e, `error while requiring ${resolved}`)
           // delete plugins[formatedFilename]
