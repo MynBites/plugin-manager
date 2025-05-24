@@ -140,7 +140,7 @@ export class PluginManager extends EventEmitter {
     if (err) this.logger?.error(err, `syntax error while loading '${formatedFilename}'`)
     else
       try {
-        await importFile(file)
+        return await importFile(file)
       } catch (e) {
         this.logger?.error(e, `error require plugin '${formatedFilename}'`)
         // delete plugins[formatedFilename]
